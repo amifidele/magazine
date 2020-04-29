@@ -1,6 +1,12 @@
 @extends('layout.page')
 @section('content')
     <div class="w-100 mx-auto mt-5">
+        <div class="w-60 text-center">
+            <h1 class="text-3xl">Main Article</h1>    
+        </div>
+        <div>
+            
+        </div>
         <div class="text-center pb-4">
             <h1 class="text-3xl">All Articles Here!</h1>
         </div>

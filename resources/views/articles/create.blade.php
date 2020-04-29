@@ -1,4 +1,4 @@
-@extends('layout.page')
+@extends('layouts.app')
 @section('content')
 <div class="w-60 mx-auto py-5">
         <div class="text-center py-3">

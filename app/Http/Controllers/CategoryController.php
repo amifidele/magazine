@@ -27,6 +27,12 @@ class CategoryController extends Controller
         
         return view('category.index')->with('category', $category);
     }
+    public function main_article(){
+
+       $category = Category::find(5);
+       return view('pages.index')->with('category', $category); 
+       
+    }
     public function edit($id)
     {
         //
