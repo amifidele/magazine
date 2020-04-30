@@ -28,26 +28,49 @@
             }
         </style>
     </head>
-<body class="bg-white-smoke">
+<body class="bg-white-smoke text-grey-darker">
     <div class="w-100">
         <div class="w-100 flex">
-            <div class="w-25">
-                <div>
-                    <p class="text-xl">Dashboard</p>
+            <div class="w-20 bg-white shadow-sm" style="height: 100vh">
+                <div class="w-80 mx-auto py-5 text-center">
+                    <p class="text-3xl line-height-small">Blog Dash</p>
+                    <span>
+                       Role :  {{ Auth::user()->user_type }}
+                    </span>
                 </div>
-                <div class="mt-5">
+                <div class="w-70 mt-5 mx-auto pl-4">
                     <ul class="list">
-                        <li></li>
+                        <li class="text-lg py-2"><a class="text-grey-darker" href="#">Web Analytics<a></li>
+                        <li class="text-lg py-2"><a class="text-grey-darker" href="#">View Articles<a></li>
+                        <li class="text-lg py-2"><a class="text-grey-darker" href="/article/create">Post Article<a></li>
+                        <li class="text-lg py-2"><a class="text-grey-darker" href="#">Categories<a></li>    
+                        <li class="text-lg py-2"><a class="text-grey-darker" href="#">Manage User<a></li>
+                        <li class="text-lg py-2">
+                            <a class="text-grey-darker" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </li>          
                     </ul>
                 </div>
             </div>
-            <div class="w-75">
-
+            <div class="w-80">
+                <div class="bg-white py-2 pb-3 w-100 text-right pr-3">
+                    <ul class="list inline-block">
+                        <li class="text-lg mx-3"><a class="text-grey-darker" href="#">Hi, {{ Auth::user()->name }}<a></li>
+                        
+                    </ul>    
+                </div>
+                @yield('content')   
             </div>
         </div>
     </div>
 
-        @yield('content')
+        
 
 
 

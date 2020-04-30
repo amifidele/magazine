@@ -76,27 +76,7 @@
                 </div>
             </div>
         </nav>
-        <div class="w-100 mx-auto">
-            <div class="w-100 flex">
-                <div class="w-20 bg-white">
-                    <div class="py-5">
-                        <ul class="list text-left">
-                            <li class="py-2 pl-5 text-lg hover:bg-black"><a href="/article/create">Posts</a></li>
-                            <li class="py-2 pl-5 text-lg hover:bg-black"><a href="#">Category</a></li>
-                            @can('isAdmin')
-                            <li class="py-2 pl-5 text-lg hover:bg-black"><a href="#">Manage Users</a></li>
-                            <li class="py-2 pl-5 text-lg hover:bg-black"><a href="#">Settings</a></li>
-                            @endcan
-                            <li class="py-2 pl-5 text-lg hover:bg-black"><a href="#">Logout</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="w-80">
-                @yield('content')
-                </div>
-            </div>
-        </div>
     
-    </div>
+                @yield('content')
 </body>
 </html>
