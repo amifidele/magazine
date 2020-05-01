@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Article;
 use App\Category;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
@@ -13,6 +14,7 @@ class ArticleController extends Controller
         $articles = App\Article::orderBy('created_at', 'asc')->paginate(3);
         return view('pages.index')->with('articles', $articles);
     }
+    
     public function create()
     {
         $categories = Category::all();
@@ -32,7 +34,7 @@ class ArticleController extends Controller
         $article->introduction = $request->input('introduction');  
         $article->description = $request->input('description');
         $article->category_id = $request->input('category_id');
-        $article->user_id = "1";
+        $article->user_id = Auth::user()->id;
         $article->save();
 
         return redirect('/')->with('success', 'New Article added successfuly ');

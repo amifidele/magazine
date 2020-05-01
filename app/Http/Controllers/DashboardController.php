@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Article;
 
 class DashboardController extends Controller
 {
@@ -24,5 +25,9 @@ class DashboardController extends Controller
     public function index()
     {
         return view('home');
+    }
+    public function articles(){
+        $articles = Article::orderBy('created_at', 'desc')->paginate(20);
+        return view('articles.dashview')->with('articles', $articles);
     }
 }

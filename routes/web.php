@@ -7,7 +7,7 @@ Route::post('article/', 'ArticleController@store');
 Route::get('article/{article}', 'ArticleController@show');
 Route::post('comment/', 'CommentController@store');
 Route::get('category/{category}', 'CategoryController@show');
-
+Route::get('all/articles', 'DashboardController@articles');
 
 Auth::routes();
 
