@@ -25,6 +25,7 @@ class CategoryController extends Controller
 
         $category = new Category;
         $category->name = $request->input('name');
+        $category->save();
 
         return redirect()->back()->with('success', '');
     }

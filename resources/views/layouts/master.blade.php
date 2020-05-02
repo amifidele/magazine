@@ -19,6 +19,8 @@
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
         <style>
             h1{
                 font-family: 'Baloo 2', cursive;
@@ -32,24 +34,25 @@
     <div class="w-100">
         <div class="w-100 flex">
             <div class="w-20 bg-white shadow-sm" >
-                <div class="fixed w-20" style="height: 100vh">
+                <div class="fixed w-20 bg-white" style="height: 100vh">
                     <div class="w-80 mx-auto py-5 text-center">
                         <p class="text-3xl line-height-small">Blog Dash</p>
                         <span>
                            Role :  {{ Auth::user()->user_type }}
                         </span>
                     </div>
-                    <div class="w-70 mt-5 mx-auto pl-4">
+                    <div class="w-70 mt-5 mx-auto pl-3">
                         <ul class="list">
-                            <li class="text-lg py-2"><a class="text-grey-darker" href="#">Web Analytics<a></li>
-                            <li class="text-lg py-2"><a class="text-grey-darker" href="/all/articles">View Articles<a></li>
-                            <li class="text-lg py-2"><a class="text-grey-darker" href="/article/create">Post Article<a></li>
-                            <li class="text-lg py-2"><a class="text-grey-darker" href="#">Categories<a></li>    
-                            <li class="text-lg py-2"><a class="text-grey-darker" href="#">Manage User<a></li>
+                            <li class="text-lg py-2"><a class="text-grey-darker" href="#"><i class="fas fa-chart-bar mx-2 text-orange"></i>Web Analytics<a></li>
+                            <li class="text-lg py-2"><a class="text-grey-darker" href="/all/articles"><i class="fas fa-eye mx-2 text-orange"></i>View Articles<a></li>
+                            <li class="text-lg py-2"><a class="text-grey-darker" href="/article/create"><i class="fas fa-plus-square mx-2 text-orange"></i>Post Article<a></li>
+                            <li class="text-lg py-2"><a class="text-grey-darker" href="/category/view"><i class="fas fa-align-center mx-2 text-orange"></i>Categories<a></li>    
+                            <li class="text-lg py-2"><a class="text-grey-darker" href="{{ Route('admin.users.index') }}"><i class="fas fa-users-cog text-orange mx-2"></i>Manage User<a></li>
                             <li class="text-lg py-2">
                                 <a class="text-grey-darker" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
+                                                         <i class="fas fa-sign-out-alt text-orange mx-2"></i>
                                             {{ __('Logout') }}
                                 </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

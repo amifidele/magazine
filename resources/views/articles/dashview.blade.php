@@ -5,7 +5,7 @@
                 <div class="text-center py-3">
                     <h1 class="text-3xl">All articles in Blog</h1>
                 </div>
-                <table class="table">
+                <table class="table table-hover">
                     <thead class="thead-dark">
                     <tr>
                         <th scope="col">#id</th>

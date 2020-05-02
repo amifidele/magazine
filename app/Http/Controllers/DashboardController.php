@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use App\Category;
 
 class DashboardController extends Controller
 {
@@ -29,5 +30,9 @@ class DashboardController extends Controller
     public function articles(){
         $articles = Article::orderBy('created_at', 'desc')->paginate(20);
         return view('articles.dashview')->with('articles', $articles);
+    }
+    public function categories(){
+        $categories = Category::all();
+        return view('category.dashview')->with('categories', $categories);
     }
 }
