@@ -43,12 +43,17 @@
                     </div>
                     <div class="w-70 mt-5 mx-auto pl-3">
                         <ul class="list">
+                            @can('admin')
                             <li class="text-lg py-2"><a class="text-grey-darker" href="#"><i class="fas fa-chart-bar mx-2 text-orange"></i>Web Analytics<a></li>
+                            @endcan
+
                             <li class="text-lg py-2"><a class="text-grey-darker" href="/all/articles"><i class="fas fa-eye mx-2 text-orange"></i>View Articles<a></li>
                             <li class="text-lg py-2"><a class="text-grey-darker" href="/article/create"><i class="fas fa-plus-square mx-2 text-orange"></i>Post Article<a></li>
-                            <li class="text-lg py-2"><a class="text-grey-darker" href="/category/view"><i class="fas fa-align-center mx-2 text-orange"></i>Categories<a></li>    
+                            <li class="text-lg py-2"><a class="text-grey-darker" href="/category/view"><i class="fas fa-align-center mx-2 text-orange"></i>Categories<a></li>   
+                            @can('admin')     
                             <li class="text-lg py-2"><a class="text-grey-darker" href="{{ Route('admin.users.index') }}"><i class="fas fa-users-cog text-orange mx-2"></i>Manage User<a></li>
-                            <li class="text-lg py-2">
+                            @endcan
+                                <li class="text-lg py-2">
                                 <a class="text-grey-darker" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
@@ -58,7 +63,8 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
-                            </li>          
+                            </li> 
+                                     
                         </ul>
                     </div>
                 </div>

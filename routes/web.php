@@ -11,7 +11,7 @@ Route::get('category/{category}', 'CategoryController@show');
 Route::get('all/articles', 'DashboardController@articles');
 Route::post('category', 'CategoryController@store');
 
-Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
+Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-user')->group(function(){
     Route::resource('users', 'UsersController', ['except' => ['show', 'create', 'store'] ]);
 });
 
