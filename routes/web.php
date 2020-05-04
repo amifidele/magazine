@@ -17,5 +17,5 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:mana
 
 Auth::routes();
 
-Route::get('/dashboard', 'DashboardController@index')->name('home');
+Route::get('/dashboard', 'DashboardController@index')->name('home')->middleware('can:manage-user');
 

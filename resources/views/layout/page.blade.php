@@ -57,6 +57,20 @@
           <a class="dropdown-item" href="/category/4">Technology</a>
         </div>
         </li>
+        
+        @auth
+        <li class="text-lg pt-2">
+          <a class="text-white" href="{{ route('logout') }}"
+                     onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                      {{ __('Logout') }}
+          </a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+          </form>
+        </li> 
+        @endauth
+        
       
     </ul>
     <form class="form-inline my-2 my-lg-0">

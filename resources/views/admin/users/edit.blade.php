@@ -9,6 +9,10 @@
         <form action="{{ route('admin.users.update', $user) }}" method="POST" > 
                @csrf
                {{ method_field('PUT') }} 
+               <label>Name</label>
+               <input class="form-input" type="text" value="{{ $user->name }}" name="name">
+               <label>Email</label>
+               <input class="form-input" type="text" value="{{ $user->email }}" name="email">
                @foreach ($roles as $role)
                <div class="form-check">
                     <input type="checkbox" name="roles[]" value="{{ $role->id }}"
